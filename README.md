@@ -1,4 +1,4 @@
-# Projeto Simples Fazendo CRUD no Banco de Dados
+# Projeto Simples - Fazendo CRUD no Banco de Dados
 #### Projetinho de CRUD que peguei pra brincar final de semana, coloquei um tempo de 1 Hora e Meia para o termino do CRUD na tabela de Categoria, onde o Usuário consegue Adicionar, Excluir, Listar e Atualizar a Categoria de Cursos. 
 ``` Nuget Usado: Microsoft.Data.SqlClient e Dapper ```
 
