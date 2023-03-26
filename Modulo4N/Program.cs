@@ -9,7 +9,7 @@ namespace Prog
     class Program
     {
         static readonly string Opcs = "1)Categoria\n2)Curso\n3)Sair\nDigite o que você quer fazer no banco : ";
-        static readonly string ConnectionString = "Server=localhost, 1433;Database=Dapper;User ID=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True";
+        static readonly string ConnectionString = "String do Banco aqui";
 
         static void LimpaTelaClick()
         {
