@@ -1,4 +1,6 @@
 # Projeto Simples Fazendo CRUD no Banco de Dados
+#### Projetinho de CRUD que peguei pra brincar final de semana, coloquei um tempo de 1 Hora e Meia para o termino do CRUD na tabela de Categoria, onde o Usuário consegue Adicionar, Excluir, Listar e Atualizar a Categoria de Cursos. 
+``` Nuget Usado: Microsoft.Data.SqlClient e Dapper ```
 
 ### Banco de Dados
 ```SQL
@@ -54,3 +56,23 @@ static void UpdateCategorias(SqlConnection conectar, string id, string name //No
             LimpaTelaClick();
         }
 ```
+### Caso Alguém tenha Interesse em Continuar, Vou deixar aqui uma atividade para você, jovem Padawan!
+Crie essa Tabela no Banco [Cursos] conforme a tabela a baixo. Nas Opções No código, deixe o usuário fazer o Create, Reader, Update e Delete. Faça todas as validações com Regex, e trate as Exception.
+
+![image](https://user-images.githubusercontent.com/77933748/227757318-83047b2d-771a-48f0-b1d9-ae3bf14e7dba.png)
+
+Para Listar, Deixei já duas views Prontas:
+##### A Primeira vai pegar toda a tabela Curso e juntar com o Nome da  Categoria.
+##### A Segunda Ira Mostrar quantos Cursos tem em Cada Categoria, Exemplo: Mobile[Kotlin, Flutter, React Native] = 3;
+```SQL
+CREATE OR ALTER VIEW ListaCompleta AS
+SELECT [Curso].[Id], [Curso].[Name], [Categoria].[Name] AS [NomeCategoria] FROM [Curso] 
+    INNER JOIN [Categoria] ON [Curso].[FK_Categoria] = [Categoria].[Id];
+```
+```SQL
+CREATE OR ALTER VIEW QtdPorCategoria AS
+SELECT [Categoria].[Name], COUNT([Curso].[FK_Categoria]) AS [QuantidadeCategorias] FROM [Curso] 
+    INNER JOIN [Categoria] ON [Curso].[FK_Categoria] = [Categoria].[Id]
+        GROUP BY [Categoria].[Name], [Curso].[FK_Categoria];
+```
+Caso tenha Alguma dúvida, me chama no [Linkedin](https://www.linkedin.com/in/patrickaquinodesouza/)
